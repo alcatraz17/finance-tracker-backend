@@ -1,0 +1,39 @@
+{
+  "name": "finance-tracker-backend",
+  "version": "1.0.0",
+  "description": "Finance Tracker app backend featuring accounts, transactions, budgets, investments and analytics.",
+  "license": "ISC",
+  "author": "Naved Anjum",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=.env src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server.js",
+    "lint": "eslint src tests",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "drizzle-orm": "^0.45.2",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.13.4",
+    "@types/pg": "^8.23.1",
+    "drizzle-kit": "^0.31.10",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.6",
+    "tsx": "^4.23.13",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.0"
+  }
+}
