@@ -8,7 +8,7 @@ export const registerSchema = z.object({
     .max(200)
     .regex(/[A-Z]/, 'Must contain at least one upper case letter')
     .regex(/[0-9]/, 'Must contain at least one number')
-    .regex(/[[^A-Za-z0-9]]/, 'Must contain at least one special character'),
+    .regex(/[^A-Za-z0-9]/, 'Must contain at least one special character'),
   name: z.string().min(2).max(200)
 });
 
@@ -20,7 +20,7 @@ export const loginSchema = z.object({
     .max(200)
     .regex(/[A-Z]/, 'Must contain at least one upper case letter')
     .regex(/[0-9]/, 'Must contain at least one number')
-    .regex(/[[^A-Za-z0-9]]/, 'Must contain at least one special character')
+    .regex(/[^A-Za-z0-9]/, 'Must contain at least one special character')
 });
 
 export type RegisterInput = z.infer<typeof registerSchema>;
