@@ -1,0 +1,5 @@
+export const AUTH = {
+  ACCESS_TOKEN_EXPIRY: '15m',
+  REFRESH_TOKEN_EXPIRY_DAYS: 7,
+  BCRYPT_SALT_ROUNDS: 12
+} as const;
