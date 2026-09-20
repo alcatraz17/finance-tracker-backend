@@ -9,3 +9,19 @@ export async function register(req: Request, res: Response) {
     data: { user }
   });
 }
+
+export async function login(req: Request, res: Response) {
+  const tokens = await authService.login(req.body.email, req.body.password);
+
+  res.json({ success: true, data: tokens });
+}
+
+export async function refresh(req: Request, res: Response) {
+  const tokens = await authService.refreshAccessToken(req.body.refreshToken);
+  res.json({ success: true, data: tokens });
+}
+
+export async function logout(req: Request, res: Response) {
+  await authService.logout(req.body.refreshToken);
+  res.json({ success: true });
+}
